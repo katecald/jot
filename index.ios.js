@@ -5,28 +5,22 @@
  */
 
 import React, { Component } from 'react';
-import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
+import { AppRegistry, StyleSheet, Text, View } from 'react-native';
+import { Scene, Router } from 'react-native-router-flux';
+import Daily from './components/Daily'
+import Notebook from './components/Notebook'
+import Partners from './components/Partners'
 
-export default class jot extends Component {
+export default class App extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
-      </View>
+      <Router>
+      <Scene key="root">
+        <Scene key="daily" component={Daily} title="Daily Jot"/>
+        <Scene key="notebook" component={Notebook} title="Notebook"/>
+        <Scene key="partners" component={Partners} title="Partners"/>
+      </Scene>
+      </Router>
     );
   }
 }
