@@ -1,0 +1,3 @@
+rootProject.name = 'jot'
+
+include ':app'
