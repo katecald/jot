@@ -11,12 +11,12 @@ export const setJot = (jot) => {
 
 // REDUCER
 const todayReducer = (state = '', action) => {
-   switch(action.type) {
-      case SET_JOT:
-       return state = action.text
-      default:
-        return state
-    }
+  switch (action.type) {
+    case SET_JOT:
+      return state = action.text
+    default:
+      return state
+  }
 }
 
 export default todayReducer

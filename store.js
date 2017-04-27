@@ -3,7 +3,16 @@ import rootReducer from './reducers'
 
 const initialState = {
     today: '',
-    notebook: {}
+    notebook: [
+        {
+          date: 'Th 3/1',
+          text: 'sample text goes here'
+        },
+        {
+          date: 'Th 3/1',
+          text: 'sample text goes here'
+        }
+      ]
 }
 
 const store = createStore(rootReducer, initialState)

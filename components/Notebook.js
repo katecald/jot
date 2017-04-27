@@ -1,25 +1,27 @@
 import React, { Component } from 'react';
-import { AppRegistry, StyleSheet, Text, View } from 'react-native';
+import { AppRegistry, StyleSheet, Text, View, ListView } from 'react-native';
 import store from '../store'
 
 export default class Notebook extends Component {
-  
-  constructor(props) {
-    super(props)
-    this.state = {}
+
+  constructor() {
+    super()
+    this.state = {
+      
+    }
   }
 
-  componentWillMount () {
+  componentWillMount() {
     this.setState(store.getState())
   }
 
-  componentDidMount () {
-    this.unsubscribe = store.subscribe(() => this.setState(store.getState()))
-  }
+  // componentDidMount () {
+  //   this.unsubscribe = store.subscribe(() => this.setState(store.getState()))
+  // }
 
-  componentWillUnmount() {
-    this.unsubscribe()
-  }
+  // componentWillUnmount() {
+  //   this.unsubscribe()
+  // }
 
   render() {
     return (
@@ -27,8 +29,13 @@ export default class Notebook extends Component {
         <Text style={styles.welcome}>
           {this.state.today}
         </Text>
+        <ListView
+          dataSource={this.state.notebook}
+          renderRow={(jot) => <Text>{`DATE: ${jot.date} TEXT: ${jot.text}`}</Text>}
+        />
       </View>
-    );
+
+    )
   }
 }
 
