@@ -5,49 +5,36 @@
  */
 
 import React, { Component } from 'react';
-import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
+import { AppRegistry, StyleSheet, Text, View } from 'react-native';
+import { Route, NativeRouter, Link } from 'react-router-native';
 
-export default class jot extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
-      </View>
-    );
-  }
-}
+
+import Navbar from './components/Navbar.js'
+import Welcome from './components/Welcome.js'
+import Today from './components/Today.js'
+import Notebook from './components/Notebook.js'
+import Partners from './components/Partners.js'
+
+
+const App = () => (
+  <NativeRouter>
+    <View style={styles.appContainer}>
+      <Route exact path="/" component={Welcome} />
+      <Route path="/today" component={Today} />
+      <Route path="/notebook" component={Notebook} />
+      <Route path="/partners" component={Partners} />
+      <Navbar />
+    </View>
+  </NativeRouter>
+)
 
 const styles = StyleSheet.create({
-  container: {
+  appContainer: {
+    marginTop: 25,
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
+    flexDirection: 'column',
+    justifyContent: 'space-between'
+  }
+})
 
-AppRegistry.registerComponent('jot', () => jot);
+AppRegistry.registerComponent('jot', () => App);
