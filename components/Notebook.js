@@ -4,8 +4,8 @@ import store from '../store'
 
 export default class Notebook extends Component {
   
-  constructor(props) {
-    super(props)
+  constructor() {
+    super()
     this.state = {}
   }
 
@@ -13,13 +13,13 @@ export default class Notebook extends Component {
     this.setState(store.getState())
   }
 
-  componentDidMount () {
-    this.unsubscribe = store.subscribe(() => this.setState(store.getState()))
-  }
+  // componentDidMount () {
+  //   this.unsubscribe = store.subscribe(() => this.setState(store.getState()))
+  // }
 
-  componentWillUnmount() {
-    this.unsubscribe()
-  }
+  // componentWillUnmount() {
+  //   this.unsubscribe()
+  // }
 
   render() {
     return (

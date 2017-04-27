@@ -10,7 +10,6 @@ export default class Today extends Component {
     this.state = { jot: '' }
   }
 
-
   componentWillUnmount() {
     store.dispatch(setJot(this.state.jot))
   }
