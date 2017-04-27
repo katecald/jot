@@ -7,12 +7,15 @@ import { setJot } from '../reducers/TodayReducer'
 export default class Today extends Component {
   constructor() {
     super()
-    this.state = { jot: '' }
+    this.state = {}
   }
 
+  componentWillMount() {
+    this.setState(store.getState())
+  }
 
   componentWillUnmount() {
-    store.dispatch(setJot(this.state.jot))
+    store.dispatch(setJot(this.state.today))
   }
 
   render() {
@@ -22,7 +25,8 @@ export default class Today extends Component {
           Here is where an example of the prompt of the day goes:
       </Text>
         <TextInput
-          onChangeText={(text) => this.setState({ jot: text })}
+          defaultValue={this.state.today}
+          onChangeText={(text) => this.setState({ today: text })}
           style={styles.input}
           multiline={true}
           editable={true}
