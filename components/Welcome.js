@@ -12,7 +12,7 @@ const Welcome = () => {
                 </Text>
             </View>
             <View style={styles.startContainer}>
-                <Link to='/daily'>
+                <Link to='/today'>
                     <Text style={styles.start}>
                         start jotting!
                     </Text>
