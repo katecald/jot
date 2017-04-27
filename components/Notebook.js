@@ -1,4 +1,3 @@
-import { Scene, Router } from 'react-native-router-flux';
 import React, { Component } from 'react';
 import { AppRegistry, StyleSheet, Text, View } from 'react-native';
 
@@ -20,3 +19,16 @@ export default class Notebook extends Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    marginTop: 25,
+    padding: 10,
+  },
+  welcome: {
+    fontSize: 20
+  },
+  instructions: {
+    fontSize: 10
+  }
+})

@@ -6,42 +6,35 @@
 
 import React, { Component } from 'react';
 import { AppRegistry, StyleSheet, Text, View } from 'react-native';
-import { Scene, Router } from 'react-native-router-flux';
-import Daily from './components/Daily'
-import Notebook from './components/Notebook'
-import Partners from './components/Partners'
+import { Route, NativeRouter, Link } from 'react-router-native';
 
-export default class App extends Component {
-  render() {
-    return (
-      <Router>
-      <Scene key="root">
-        <Scene key="daily" component={Daily} title="Daily Jot"/>
-        <Scene key="notebook" component={Notebook} title="Notebook"/>
-        <Scene key="partners" component={Partners} title="Partners"/>
-      </Scene>
-      </Router>
-    );
-  }
-}
+
+import Navbar from './components/Navbar.js'
+import Welcome from './components/Welcome.js'
+import Today from './components/Today.js'
+import Notebook from './components/Notebook.js'
+import Partners from './components/Partners.js'
+
+
+const App = () => (
+  <NativeRouter>
+    <View style={styles.appContainer}>
+      <Route exact path="/" component={Welcome} />
+      <Route path="/today" component={Today} />
+      <Route path="/notebook" component={Notebook} />
+      <Route path="/partners" component={Partners} />
+      <Navbar />
+    </View>
+  </NativeRouter>
+)
 
 const styles = StyleSheet.create({
-  container: {
+  appContainer: {
+    marginTop: 25,
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
+    flexDirection: 'column',
+    justifyContent: 'space-between'
+  }
+})
 
-AppRegistry.registerComponent('jot', () => jot);
+AppRegistry.registerComponent('jot', () => App);
