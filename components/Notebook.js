@@ -25,7 +25,7 @@ export default class Notebook extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          {JSON.stringify(this.state)}
+          {this.state.today}
         </Text>
       </View>
     );
