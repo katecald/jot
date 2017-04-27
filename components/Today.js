@@ -1,22 +1,37 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, TextInput, View } from 'react-native';
+import store from '../store'
+import { setJot } from '../reducers/TodayReducer'
 //import styles from './styles'
 
-const Today = () => {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.prompt}>
-        Here is where an example of the prompt of the day goes:
+export default class Today extends Component {
+  constructor() {
+    super()
+    this.state = { jot: '' }
+  }
+
+
+  componentWillUnmount() {
+    store.dispatch(setJot(this.state.jot))
+  }
+
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.prompt}>
+          Here is where an example of the prompt of the day goes:
       </Text>
-      <TextInput 
-        style={styles.input} 
-        multiline={true}
-        editable={true}
-        autoFocus={true}
+        <TextInput
+          onChangeText={(text) => this.setState({ jot: text })}
+          style={styles.input}
+          multiline={true}
+          editable={true}
+          autoFocus={true}
         />
-    </View>
-  );
-}
+      </View>
+    )
+  }
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -37,5 +52,3 @@ const styles = StyleSheet.create({
     padding: 10
   }
 })
-
-export default Today

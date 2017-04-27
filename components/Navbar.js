@@ -3,7 +3,6 @@ import { AppRegistry, StyleSheet, Text, View } from 'react-native';
 import { Link } from 'react-router-native'
 
 const Navbar = () => {
-
     return (
         <View style={styles.container}>
             <View style={styles.nav}>
