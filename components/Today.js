@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, TextInput, View } from 'react-native';
 import store from '../store'
 import { setJot } from '../reducers/TodayReducer'
+import { addToNotebook } from '../reducers/NotebookReducer'
 //import styles from './styles'
 
 export default class Today extends Component {
@@ -16,6 +17,7 @@ export default class Today extends Component {
 
   componentWillUnmount() {
     store.dispatch(setJot(this.state.today))
+    store.dispatch(addToNotebook(this.state.today))
   }
 
   render() {

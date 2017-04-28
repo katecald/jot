@@ -3,9 +3,21 @@ export const ADD_TO_NOTEBOOK = 'ADD_TO_NOTEBOOK'
 
 // ACTIONS
 export const addToNotebook = (jot) => {
+    let dateData = new Date()
+    
+    let dateStr = dateData.toUTCString()
+    let key = dateStr
+    let displayDay = dateStr.slice(0,(dateStr.indexOf(',')))
     return {
         type: ADD_TO_NOTEBOOK,
-        newJot: { jot }
+        newJot: {
+            dateData,
+            dateStr,
+            key,
+            displayDay,
+            fullText: jot,
+            previewText: `${jot.slice(0,60)}...`
+        }
     }
 }
 
@@ -13,10 +25,16 @@ export const addToNotebook = (jot) => {
 const notebookReducer = (state = [], action) => {
     switch (action.type) {
         case ADD_TO_NOTEBOOK:
-            return state.push(action.newJot)
+            if (state[0].displayDay === 'Thurs') {
+                return state = [action.newJot, ...state]
+            } else if (action.newJot.displayDay===state[0].displayDay) {
+                state.splice(0, 1)
+                return state = [action.newJot, ...state]
+            }
+            
         default:
             return state
     }
-} 
+}
 
 export default notebookReducer
