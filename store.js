@@ -1,6 +1,6 @@
 import { createStore } from 'redux'
 import rootReducer from './reducers'
-import { dummyNotebook } from './dummyData'
+import { dummyNotebook, dummyPartnerFeed } from './dummyData'
 
 
 const initialState = {

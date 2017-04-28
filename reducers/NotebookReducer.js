@@ -16,7 +16,7 @@ export const addToNotebook = (jot) => {
             key,
             displayDay,
             fullText: jot,
-            previewText: `${jot.slice(0,60)}...`
+            previewText: `${jot.slice(0,49)}...`
         }
     }
 }

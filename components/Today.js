@@ -24,7 +24,7 @@ export default class Today extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.prompt}>
-          Here is where an example of the prompt of the day goes:
+          Describe someone you saw today:
       </Text>
         <TextInput
           defaultValue={this.state.today}
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
   },
   prompt: {
     fontSize: 20,
-    marginBottom: 10
+    marginBottom: 15
   },
   input: {
     flex: 5,

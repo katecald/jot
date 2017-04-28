@@ -39,12 +39,12 @@ export const dummyNotebook = [
 export const dummyPartnerFeed = [
   {
     displayDay: 'Thurs',
-    previewText: 'Once upon a time there was a castle...',
+    previewText: 'His eyes were blue like super blue water...',
     key: 1
   },
   {
     displayDay: 'Wed',
-    previewText: 'It was the best of times, It was the worst of times...',
+    previewText: 'She simply couldnn\'t go on...',
     key: 2
   },
   {
