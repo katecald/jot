@@ -25,13 +25,8 @@ export const addToNotebook = (jot) => {
 const notebookReducer = (state = [], action) => {
     switch (action.type) {
         case ADD_TO_NOTEBOOK:
-            if (state[0].displayDay === 'Thurs') {
-                return state = [action.newJot, ...state]
-            } else if (action.newJot.displayDay===state[0].displayDay) {
-                state.splice(0, 1)
-                return state = [action.newJot, ...state]
-            }
-            
+            if (action.newJot.displayDay===state[0].displayDay) state.splice(0, 1)
+            return state = [action.newJot, ...state]
         default:
             return state
     }
