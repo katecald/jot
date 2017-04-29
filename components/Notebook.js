@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { AppRegistry, StyleSheet, Text, View, FlatList } from 'react-native';
+import { Link } from 'react-router-native'
 import store from '../store'
 
 export default class Notebook extends Component {
@@ -19,6 +20,7 @@ export default class Notebook extends Component {
         <FlatList
           data={this.state.notebook}
           renderItem={({ item }) => (
+            <Link to={`/pastjot/${item.key}`}>
             <View key={item.dateStr} style={styles.jot}>
               <View style={styles.dateview}>
                 <Text style={styles.date}>{`${item.displayDay}`}</Text>
@@ -26,7 +28,8 @@ export default class Notebook extends Component {
               <View style={styles.textview}>
                 <Text style={styles.preview}>{`${item.previewText}`}</Text>
               </View>
-            </View>)}
+            </View>
+            </Link>)}
         />
       </View>
     )
