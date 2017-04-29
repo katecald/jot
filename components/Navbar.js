@@ -1,29 +1,36 @@
 import React, { Component } from 'react';
 import { AppRegistry, StyleSheet, Text, View } from 'react-native';
 import { Link } from 'react-router-native'
+import Icon from 'react-native-vector-icons/FontAwesome'
 
 const Navbar = () => {
     return (
         <View style={styles.container}>
             <View style={styles.nav}>
-                <Link
-                    to="/today"
-                    underlayColor='#f0f4f7'
-                    style={styles.navItem}>
-                    <Text>Today</Text>
-                </Link>
-                <Link
-                    to="/notebook"
-                    underlayColor='#f0f4f7'
-                    style={styles.navItem}>
-                    <Text>Notebook</Text>
-                </Link>
-                <Link
-                    to="/partners"
-                    underlayColor='#f0f4f7'
-                    style={styles.navItem} >
-                    <Text>Partners</Text>
-                </Link>
+                <View style={styles.navItem}>
+                    <Link to="/today">
+                        <Icon name="pencil" size={30} color="black" />
+                    </Link>
+                    <Link to="/today">
+                        <Text>Today</Text>
+                    </Link>
+                </View>
+                <View style={styles.navItem}>
+                    <Link to="/notebook">
+                        <Icon name="book" size={30} color="black" />
+                    </Link>
+                    <Link to="/notebook">
+                        <Text>Notebook</Text>
+                    </Link>
+                </View>
+                <View style={styles.navItem}>
+                    <Link to="/partners">
+                        <Icon name="group" size={30} color="black" />
+                    </Link>
+                    <Link to="/partners">
+                        <Text>Partners</Text>
+                    </Link>
+                </View>
             </View>
         </View>
     );
