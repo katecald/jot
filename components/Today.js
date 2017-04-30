@@ -8,10 +8,7 @@ import { addToNotebook } from '../reducers/NotebookReducer'
 export default class Today extends Component {
   constructor() {
     super()
-    this.state = {
-      prompt: 'Describe someone you saw today:',
-      text: ''
-    }
+    this.state = {}
   }
 
   componentWillMount() {
@@ -19,8 +16,8 @@ export default class Today extends Component {
   }
 
   componentWillUnmount() {
-    store.dispatch(setJot(this.state))
-    store.dispatch(addToNotebook(this.state))
+    store.dispatch(setJot(this.state.today))
+    store.dispatch(addToNotebook(this.state.today))
   }
 
   render() {
@@ -30,8 +27,8 @@ export default class Today extends Component {
           Describe someone you saw today:
         </Text>
         <TextInput
-          defaultValue={this.state.text}
-          onChangeText={(text) => this.setState({ text })}
+          defaultValue={this.state.today}
+          onChangeText={(text) => this.setState({ today: text })}
           style={styles.input}
           multiline={true}
           editable={true}
