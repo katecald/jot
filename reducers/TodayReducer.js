@@ -5,15 +5,15 @@ export const SET_JOT = 'SET_JOT'
 export const setJot = (jot) => {
   return {
     type: SET_JOT,
-    text: jot
+    today: { jot }
   }
 }
 
 // REDUCER
-const todayReducer = (state = '', action) => {
+const todayReducer = (state = {}, action) => {
   switch (action.type) {
     case SET_JOT:
-      return state = action.text
+      return state = action.today
     default:
       return state
   }
