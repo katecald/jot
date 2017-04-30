@@ -4,19 +4,18 @@ export const ADD_TO_NOTEBOOK = 'ADD_TO_NOTEBOOK'
 // ACTIONS
 export const addToNotebook = (jot) => {
     let dateData = new Date()
-    
-    let dateStr = dateData.toUTCString()
-    let key = dateStr
-    let displayDay = dateStr.slice(0,(dateStr.indexOf(',')))
+    let key = dateData.toUTCString()
+    let displayDay = key.slice(0,(key.indexOf(',')))
+    let prompt = jot.prompt
     return {
         type: ADD_TO_NOTEBOOK,
         newJot: {
             dateData,
-            dateStr,
             key,
             displayDay,
-            fullText: jot,
-            previewText: `${jot.slice(0,49)}...`
+            prompt,
+            fullText: jot.text,
+            previewText: `${jot.text.slice(0,49)}...`
         }
     }
 }
