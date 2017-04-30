@@ -1,6 +1,6 @@
 export const dummyNotebook = [
   {
-    displayDay: 'Sun',
+    displayDay: 'Sat',
     prompt: 'Write about a time.',
     previewText: 'It was the best of times, it was the worst of times...',
     fullText: 'It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair, we had everything before us, we had nothing before us, we were all going direct to Heaven, we were all going direct the other way – in short, the period was so far like the present period, that some of its noisiest authorities insisted on its being received, for good or for evil, in the superlative degree of comparison only.',
@@ -86,5 +86,34 @@ export const dummyPartnerFeed = [
     displayDay: 'Mon',
     previewText: 'We know what we are, but know not what we may be...',
     key: '71'
+  }
+]
+
+export const dummyPartnerList = [
+  {
+    name: 'Chimamamanda Ngozi Adichie',
+    picURL: 'https://www.wellesley.edu/sites/default/files/assets/departments/commencement/chimamanda_900x430.jpg',
+    key:'100'
+  },
+  {
+    name: 'Haruki Murakami',
+    picURL: 'https://www.mobiefit.com/blog/wp-content/uploads/2016/04/Haruki-Murakami.-Photograph-Patrick-Fraser-Corbis-Outline.png',
+    key:'200'
+  },
+  {
+    name: 'Jhumpa Lahiri',
+    picURL: 'https://media.npr.org/assets/img/2016/02/08/lahiri_wide-fc766f724074de134c31a57cfbe71bd0d463b41a.jpg',
+    key:'300'
+  },
+  {
+    name: 'Zadie Smith',
+    picURL: 'https://www.jaredmobarak.com/wp-content/filmstills/babel-zadiesmith02.jpg',
+    key:'400'
+  },
+  {
+    name: 'William Shakespeare',
+    picURL: 'https://i.ytimg.com/vi/pAmn1QSQBs8/maxresdefault.jpg',
+    key:'500'
+
   }
 ]
