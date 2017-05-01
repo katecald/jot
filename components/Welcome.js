@@ -37,7 +37,8 @@ const styles = StyleSheet.create({
     welcome: {
         fontSize: 30,
         textAlign: 'center',
-        marginBottom: 10
+        marginBottom: 10,
+        fontFamily: 'avenir'
     },
     startContainer: {
         flex: 1,
@@ -45,8 +46,11 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     start: {
-        backgroundColor: 'steelblue',
+        backgroundColor: '#143366',
+        color: 'white',
         fontSize: 20,
+        fontWeight: 'bold',
+        fontFamily: 'avenir',
         padding: 20
     }
 })

@@ -9,26 +9,26 @@ const Navbar = () => {
             <View style={styles.nav}>
                 <View style={styles.navItem}>
                     <Link to="/today">
-                        <Icon name="pencil" size={30} color="black" />
+                        <Icon name="pencil" size={30} color="#143366" />
                     </Link>
                     <Link to="/today">
-                        <Text>Today</Text>
+                        <Text style={styles.text}>Today</Text>
                     </Link>
                 </View>
                 <View style={styles.navItem}>
                     <Link to="/notebook">
-                        <Icon name="book" size={30} color="black" />
+                        <Icon name="book" size={30} color="#143366" />
                     </Link>
                     <Link to="/notebook">
-                        <Text>Notebook</Text>
+                        <Text style={styles.text}>Notebook</Text>
                     </Link>
                 </View>
                 <View style={styles.navItem}>
                     <Link to="/partners">
-                        <Icon name="group" size={30} color="black" />
+                        <Icon name="group" size={30} color="#143366" />
                     </Link>
                     <Link to="/partners">
-                        <Text>Partners</Text>
+                        <Text style={styles.text}>Partners</Text>
                     </Link>
                 </View>
             </View>
@@ -48,6 +48,11 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         padding: 20
+    },
+    text: {
+        fontFamily: 'avenir',
+        fontWeight: 'bold',
+        color: '#143366'
     }
 })
 

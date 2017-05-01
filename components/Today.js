@@ -47,11 +47,14 @@ const styles = StyleSheet.create({
   },
   prompt: {
     fontSize: 20,
-    marginBottom: 15
+    marginBottom: 15,
+    fontWeight: 'bold',
+    fontFamily: 'avenir'
   },
   input: {
     flex: 5,
     fontSize: 20,
+    fontFamily: 'avenir', 
     borderColor: 'gray',
     borderWidth: 1,
     borderRadius: 10,
